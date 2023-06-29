@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { Layout } from './Layout/Layout';
 // import InitialTodos from './data/todos.json';
 import TodoList from './TodoList/TodoList';
 import TodoEditor from './TodoEditor/TodoEditor';
@@ -70,7 +71,7 @@ export class App extends Component {
 
     const visibleTodos = this.getVisibleTodos();
     return (
-      <>
+      <Layout>
         <TodoEditor onSubmit={this.addTodo} />
         <TodoFilter value={filter} onChange={this.changeFilter} />
 
@@ -79,7 +80,7 @@ export class App extends Component {
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
         />
-      </>
+      </Layout>
     );
   }
 }

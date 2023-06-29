@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, FormTodo, Textinput } from '../TodoEditor/TodoEditorStyled';
 
 export default class TodoEditor extends Component {
   state = { message: '' };
@@ -16,13 +17,14 @@ export default class TodoEditor extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <textarea
+      <FormTodo onSubmit={this.handleSubmit}>
+        <Textinput
+          placeholder="Describe your task"
           value={this.state.message}
           onChange={this.handleChange}
-        ></textarea>
-        <button type="submit">Add</button>
-      </form>
+        ></Textinput>
+        <Button type="submit">Add</Button>
+      </FormTodo>
     );
   }
 }

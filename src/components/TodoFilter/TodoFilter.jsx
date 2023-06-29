@@ -1,3 +1,12 @@
+import { FilterInput } from './TodoFilterStyled';
+
 export const TodoFilter = ({ value, onChange }) => {
-  return <input type="text" value={value} onChange={onChange} />;
+  return (
+    <FilterInput
+      type="text"
+      placeholder="Find your task"
+      value={value}
+      onChange={onChange}
+    />
+  );
 };
