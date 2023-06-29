@@ -1,15 +1,16 @@
+import Todo from '../Todo/Todo';
+
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
   return (
     <ul>
       {todos.map(({ id, text, completed }) => (
         <li key={id}>
-          <input
-            type="checkbox"
-            checked={completed || false}
-            onChange={() => onToggleCompleted(id)}
+          <Todo
+            text={text}
+            completed={completed}
+            onToggleCompleted={() => onToggleCompleted(id)}
+            onDeleteTodo={() => onDeleteTodo(id)}
           />
-          <p>{text}</p>
-          <button onClick={() => onDeleteTodo(id)}>delete</button>
         </li>
       ))}
     </ul>
